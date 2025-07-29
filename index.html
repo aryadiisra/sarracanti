@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Selamat Datang</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at center, #ffe0f0, #ffc1de);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+
+    .love-container {
+      text-align: center;
+    }
+
+    .love {
+      font-size: 120px;
+      color: #ff5ca1;
+      animation: glow 2s ease-in-out infinite, shimmer 5s linear infinite;
+      text-shadow: 0 0 15px #ff85c1, 0 0 30px #ffb3d9;
+    }
+
+    @keyframes glow {
+      0%, 100% { text-shadow: 0 0 15px #ff85c1, 0 0 30px #ffb3d9; }
+      50% { text-shadow: 0 0 25px #ff5ca1, 0 0 50px #ff8fba; }
+    }
+
+    @keyframes shimmer {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .start-btn {
+      margin-top: 30px;
+      padding: 14px 28px;
+      font-size: 1em;
+      background: #ff85b3;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+      transition: background 0.3s;
+    }
+
+    .start-btn:hover {
+      background: #ff5c99;
+    }
+  </style>
+</head>
+<body>
+  <div class="love-container">
+    <div class="love">❤️</div>
+    <button class="start-btn" onclick="nextPage()">klik disini sayangg</button>
+  </div>
+
+  <script>
+    function nextPage() {
+      window.location.href = "page2.html";
+    }
+  </script>
+</body>
+</html>

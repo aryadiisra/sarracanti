@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Halaman 4 - Bunga Tumbuh Banyak</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #ffe6f0, #fff0f5);
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+
+    .caption {
+      text-align: center;
+      font-size: 2em;
+      color: #d63384;
+      font-weight: bold;
+      margin-top: 30px;
+      z-index: 10;
+      position: relative;
+    }
+
+    .flower {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      pointer-events: none;
+      animation: float 10s linear infinite;
+      opacity: 0.9;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-20vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .btn-container {
+      text-align: center;
+      margin-top: 40px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .btn-back {
+      background-color: #ff85b3;
+      color: white;
+      padding: 12px 24px;
+      font-size: 1em;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(255, 105, 180, 0.4);
+      transition: background 0.3s;
+    }
+
+    .btn-back:hover {
+      background-color: #ff5c99;
+    }
+  </style>
+</head>
+<body>
+     
+  <div class="caption">i love youu <br/> HAPPY GIRLFRIEND DAY SAYANGGGGG</div>
+
+  <div class="btn-container">
+    <button class="btn-back" onclick="goToHome()">LOVE</button>
+  </div>
+
+  <script>
+    function goToHome() {
+      window.location.href = "index.html";
+    }
+
+    const flowerCount = 30;
+    const images = [
+      'img/rose1.png', 'img/rose2.png', 'img/rose3.png', 'img/rose4.png', 'img/rose5.png'
+    ];
+
+    for (let i = 0; i < flowerCount; i++) {
+      const img = document.createElement('img');
+      img.src = images[Math.floor(Math.random() * images.length)];
+      img.classList.add('flower');
+      img.style.left = Math.random() * 100 + 'vw';
+      img.style.animationDelay = (Math.random() * 10) + 's';
+      img.style.animationDuration = (8 + Math.random() * 5) + 's';
+      document.body.appendChild(img);
+    }
+  </script>
+  <audio autoplay loop>
+    <source src="music/birthday-song.mp3" type="audio/mp3">
+  </audio>
+
+</body>
+</html>

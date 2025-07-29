@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Halaman 3 - Galeri Foto</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #fff0f5, #ffe6f0);
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px 20px;
+    }
+
+    h1 {
+      font-size: 2em;
+      color: #d63384;
+      margin-bottom: 30px;
+      text-align: center;
+      animation: fadeIn 2s ease-out;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 960px;
+      margin-bottom: 40px;
+      animation: fadeInDrop 2s ease-out forwards;
+    }
+
+    .photo {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transform: translateY(-50px);
+      opacity: 0;
+      animation: photoDrop 1s ease forwards;
+    }
+
+    .photo:nth-child(1) { animation-delay: 0.2s; }
+    .photo:nth-child(2) { animation-delay: 0.4s; }
+    .photo:nth-child(3) { animation-delay: 0.6s; }
+    .photo:nth-child(4) { animation-delay: 0.8s; }
+    .photo:nth-child(5) { animation-delay: 1.0s; }
+    .photo:nth-child(6) { animation-delay: 1.2s; }
+    .photo:nth-child(7) { animation-delay: 1.4s; }
+    .photo:nth-child(8) { animation-delay: 1.6s; }
+    .photo:nth-child(9) { animation-delay: 1.8s; }
+    .photo:nth-child(10) { animation-delay: 2.0s; }
+
+    .next-button {
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff8cbf;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    .next-button:hover {
+      background-color: #ff66a3;
+    }
+
+    @keyframes photoDrop {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInDrop {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <audio autoplay loop>
+    <source src="music/birthday-song.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="container">
+    <h1>I am grateful to be with you, your smile, your sweetness, your beauty and proud to have you 🌸</h1>
+    <div class="gallery">
+       <img src="img/foto1.jpg" class="photo">
+    <img src="img/foto2.jpg" class="photo">
+    <img src="img/foto3.jpg" class="photo">
+    <img src="img/foto4.jpg" class="photo">
+    <img src="img/foto5.jpg" class="photo">
+    <img src="img/foto6.jpg" class="photo">
+    <img src="img/foto7.jpg" class="photo">
+    <img src="img/foto8.jpg" class="photo">
+    <img src="img/foto9.jpg" class="photo">
+    <img src="img/foto10.jpg" class="photo">
+    <img src="img/foto11.jpg" class="photo">
+    <img src="img/foto12.jpg" class="photo">
+    <img src="img/foto13.jpg" class="photo">
+    <img src="img/foto14.jpg" class="photo">
+    <img src="img/foto15.jpg" class="photo">
+    <img src="img/foto16.jpg" class="photo">
+    <img src="img/foto17.jpg" class="photo">
+    <img src="img/foto18.jpg" class="photo">
+    <img src="img/foto19.jpg" class="photo">
+    <img src="img/foto20.jpg" class="photo">
+    <img src="img/foto21.jpg" class="photo">
+    <img src="img/foto22.jpg" class="photo">
+    <img src="img/foto23.jpg" class="photo">
+    <img src="img/foto24.jpg" class="photo">
+    <img src="img/foto25.jpg" class="photo">
+    <img src="img/foto26.jpg" class="photo">
+    <img src="img/foto27.jpg" class="photo">
+    </div>
+    <button class="next-button" onclick="window.location.href='page4.html'">Dan Terakhirpi</button>
+  </div>
+
+</body>
+</html>

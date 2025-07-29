@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Ucapan Ulang Tahun</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body.page2 {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: linear-gradient(to bottom right, #fff0f5, #ffe6f0);
+      font-family: 'Segoe UI', sans-serif;
+      animation: fadeInPage 1.8s ease-in-out;
+      position: relative;
+    }
+
+    @keyframes fadeInPage {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .message-box {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 40px;
+      margin: 160px auto 80px;
+      border: 3px solid #ff99cc;
+      border-radius: 25px;
+      width: 80%;
+      max-width: 700px;
+      box-shadow: 0 0 30px rgba(255, 182, 193, 0.5);
+      z-index: 2;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .message-box h1 {
+      color: #d63384;
+      font-size: 2.7em;
+      margin-bottom: 15px;
+    }
+
+    .message-box p {
+      color: #555;
+      font-size: 1.3em;
+      line-height: 1.8em;
+    }
+
+    .petal {
+      position: fixed;
+      width: 30px;
+      height: 30px;
+      background-image: url('img/petal.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      animation: fall linear infinite;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.85;
+      filter: drop-shadow(0 0 5px #ffc0cb80);
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: radial-gradient(circle, #fff 0%, #ff69b4 70%);
+      border-radius: 50%;
+      animation: sparkle 2s infinite ease-in-out;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.7;
+    }
+
+    @keyframes sparkle {
+      0%, 100% { opacity: 0; transform: scale(0.5); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+
+    /* 🌸 Bunga di bagian atas */
+    .top-flowers {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .top-flowers img {
+      position: absolute;
+      width: 60px;
+      animation: floatFlower 8s ease-in-out infinite;
+      opacity: 0.9;
+    }
+
+    .top-flowers img:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .top-flowers img:nth-child(2) { left: 30%; animation-delay: 2s; }
+    .top-flowers img:nth-child(3) { left: 50%; animation-delay: 4s; }
+    .top-flowers img:nth-child(4) { left: 70%; animation-delay: 1s; }
+    .top-flowers img:nth-child(5) { left: 85%; animation-delay: 3s; }
+
+    @keyframes floatFlower {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(10px) rotate(5deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+  </style>
+</head>
+<body class="page2">
+
+  <!-- Musik -->
+  <audio autoplay loop>
+    <source src="music/birthday-song.mp3" type="audio/mp3">
+    Browser kamu tidak mendukung audio.
+  </audio>
+
+  <!-- 🌸 Bunga Atas -->
+  <div class="top-flowers">
+    <img src="img/petal.png" alt="flower">
+    <img src="img/petal.png" alt="flower">
+    <img src="img/petal.png" alt="flower">
+    <img src="img/petal.png" alt="flower">
+    <img src="img/petal.png" alt="flower">
+  </div>
+
+  <!-- Ucapan -->
+  <div class="message-box" onclick="goToPage3()">
+    <h1>HAPPY BIRTHDAY SAYANGG 🎉</h1>
+    <p>
+      Semoga harimu dipenuhi cinta dan bunga-bunga bahagia 🌸💖<br/>
+      Tetaplah bersinar seperti sekarang, dengan hati yang lembut dan kuat.<br/>
+      ITUMO KA TIDAK BISA KA BERKATA-KATA INTINYA YA ITU✨<br/><br/>
+      <em>(Klik ki lagi 💞)</em>
+    </p>
+  </div>
+
+  <!-- Script Animasi -->
+  <script>
+    function goToPage3() {
+      window.location.href = "page3.html";
+    }
+
+    function createPetal() {
+      const petal = document.createElement("div");
+      petal.classList.add("petal");
+      petal.style.left = Math.random() * window.innerWidth + "px";
+      petal.style.animationDuration = (Math.random() * 5 + 6) + "s";
+      petal.style.transform = `rotate(${Math.random() * 360}deg)`;
+      petal.style.width = petal.style.height = (Math.random() * 20 + 20) + "px";
+      document.body.appendChild(petal);
+      setTimeout(() => { petal.remove(); }, 10000);
+    }
+
+    function createSparkle() {
+      const sparkle = document.createElement("div");
+      sparkle.classList.add("sparkle");
+      sparkle.style.left = Math.random() * window.innerWidth + "px";
+      sparkle.style.top = Math.random() * window.innerHeight + "px";
+      sparkle.style.animationDuration = (Math.random() * 2 + 1.5) + "s";
+      document.body.appendChild(sparkle);
+      setTimeout(() => { sparkle.remove(); }, 2500);
+    }
+
+    setInterval(createPetal, 200);
+    setInterval(createSparkle, 800);
+  </script>
+</body>
+</html>
+
+
